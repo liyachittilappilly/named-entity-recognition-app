@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Name Entity Recognition App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      body {
+        background-color: #ffe6f0; /* Light pink background for whole page */
+        font-family: 'Georgia', serif;
+      }
+      h1 {
+        color: #C71585; /* Dark rose */
+        font-weight: bold;
+        font-size: 3rem;
+        margin-top: 30px;
+        font-family: 'Georgia', serif;
+      }
+      .upload-box {
+        background-color: #ffeaf2; /* Lightest pink */
+        border-radius: 15px;
+        padding: 20px;
+      }
+      label.form-label {
+        color: #C71585; /* Dark rose */
+        font-weight: bold;
+        font-size: 1.1rem;
+      }
+      input[type="file"]::file-selector-button {
+        background-color: #fdd0e5;
+        color: #333;
+        border: 1px solid #f6b2cc;
+        border-radius: 5px;
+        padding: 6px 12px;
+      }
+      input[type="file"]::file-selector-button::after {
+        content: "Attach file";
+      }
+      .btn-primary {
+        background-color: #8B4513; /* Aesthetic brown */
+        border: none;
+        font-weight: bold;
+      }
+      .result-box {
+        background-color: #fce4ec; /* Soft pink shade */
+        padding: 20px;
+        border-radius: 15px;
+        margin-top: 20px;
+        color: #5C4033; /* Brown text */
+        font-family: 'Georgia', serif;
+        font-size: 1.1rem;
+      }
+      .result-box strong {
+        color: #C71585; /* Dark rose for headings */
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="text-center">Name Entity Recognition App</h1>
+
+    <div class="container upload-box mt-4">
+      <form action="/entity" method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+          <label for="file" class="form-label">Post file</label>
+          <input type="file" name="file" class="form-control" id="file" accept=".txt">
+        </div>
+        <button type="submit" class="btn btn-primary">Get Entity</button>
+      </form>
+    </div>
+
+    <div class="container result-box">
+      {% if html and text %}
+        <p><strong>Original Text:</strong><br>{{text|safe}}</p>
+        <p><strong>Entity Text:</strong><br>{{html|safe}}</p>
+      {% endif %}
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
