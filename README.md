@@ -94,6 +94,12 @@ The interface uses a soft pink theme with Georgia font to create an elegant and 
 * Save past uploads and results.
 * Option to paste text directly instead of uploading files.
 
+## 🙌 Acknowledgements
+
+Special thanks to [AI with Noor] [(https://youtu.be/gko4WnAgzz4?feature=shared)] for the tutorial inspiration.
+
+
+
 ## 🧑‍💻 Author
 
 Developed by Liya S Chittilappilly 💻
